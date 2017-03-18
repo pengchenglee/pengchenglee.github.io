@@ -250,7 +250,59 @@
 <li>可以使用!/?: </li>
 <li>原有的内容会被ng-bind绑定的值替换掉</li>
 </ul>
-
+<h2 id="ng-cloak-1"><a href="#ng-cloak-1" class="headerlink" title="ng-cloak"></a>ng-cloak</h2><p>用途: 防止闪烁</p>
+<ul>
+<li>先声明一个css,找到所有带有ng-cloak让其隐藏</li>
+<li>增加到需要防止闪烁的元素身上</li>
+<li>加载后移出掉ng-cloak属性</li>
+</ul>
+<h2 id="ng-controller"><a href="#ng-controller" class="headerlink" title="ng-controller"></a>ng-controller</h2><p>用途: 调度数据的，买一送一送作用域</p>
+<ul>
+<li>不能操作dom，dom在link函数操作</li>
+<li>管辖范围,和dom平齐</li>
+<li>可以将带有ng-controller的标签嵌套，子继承父 父继承不了子</li>
+<li>不能复用</li>
+<li>调用ng-controller后可以执行控制器</li>
+</ul>
+<h2 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h2><p>用途: 循环遍历</p>
+<ul>
+<li>要循环谁就写在谁的身上</li>
+<li>遍历数组 ng中增加的属性$index $odd $even $first $last $middle (根据索引来遍历)</li>
+<li>通过(key,value)可以获得索引，默认写一个变量则是value</li>
+<li>对象同数组</li>
+</ul>
+<h2 id="ng-repeat-为什么-track-by-index"><a href="#ng-repeat-为什么-track-by-index" class="headerlink" title="ng-repeat 为什么 track by $index"></a>ng-repeat 为什么 track by $index</h2><ul>
+<li>如果value重复，不能通过相同的value去遍历，通过唯一项来进行遍历。只要是数组就加track by $index</li>
+</ul>
+<h2 id="ng-click"><a href="#ng-click" class="headerlink" title="ng-click"></a>ng-click</h2><ul>
+<li>angular的事件 ng-click=”a()”</li>
+</ul>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show/ng-hide"></a>ng-show/ng-hide</h2><p>用途: 控制元素的显示隐藏</p>
+<ul>
+<li>通过css样式进行隐藏，内部命令依然执行</li>
+</ul>
+<blockquote>
+<p>频繁切换采用ng-show/ng-hide</p>
+</blockquote>
+<h2 id="ng-if"><a href="#ng-if" class="headerlink" title="ng-if"></a>ng-if</h2><p>用途: 控制元素的显示隐藏</p>
+<ul>
+<li>通过删除dom达到隐藏效果，如果为false内部指令不再执行</li>
+<li>会产生一个作用域，保留删掉的内容</li>
+</ul>
+<blockquote>
+<p>一般和ng-repeat连用，如果数据不存在就移出掉dom</p>
+</blockquote>
+<h2 id="ng-disabled"><a href="#ng-disabled" class="headerlink" title="ng-disabled"></a>ng-disabled</h2><p>用途: ng-disabled=”true” 进入禁用状态</p>
+<h2 id="ng-readonly"><a href="#ng-readonly" class="headerlink" title="ng-readonly"></a>ng-readonly</h2><p>用途: ng-readonly=”true” 进入仅读状态</p>
+<h2 id="指令（内置，自定义）"><a href="#指令（内置，自定义）" class="headerlink" title="指令（内置，自定义）"></a>指令（内置，自定义）</h2><ul>
+<li>自定义: 组件式和装饰型<ul>
+<li>组件式: Element,看有没有template</li>
+<li>装饰型: Attribute,一般没有模板 link函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">return &#123;</div><div class="line">    restrict: &apos;EA&apos;, 限制使用范围</div><div class="line">    template/templateUrl, 模板</div><div class="line">    transclude: true,</div><div class="line">    scope:true/&#123;@=&amp;&#125;/不写</div><div class="line">    replace: true 替换</div><div class="line">    link:function(scope,element,attrs)&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="link-transclude"><a href="#link-transclude" class="headerlink" title="link,transclude"></a>link,transclude</h2>
       
 
       
