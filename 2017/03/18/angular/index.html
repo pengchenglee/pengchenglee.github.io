@@ -6,33 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>this | 个人博客</title>
+  <title>angular | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.this的第一种用法： 事件绑定函数中的this就是事件被触发的时候那个元素,其实也就是绑定给谁this就是谁
-var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
-   div1.onclick = function (){
-       console.log(this);//div1
-   }
-2.this的第二种用法: 函数中的th">
+  <meta name="description" content="框架和(库 vue react angular)
+库 提供了很多方法，让我们来调用（主动调用）
+框架 我们按照他的规范去写，人家调用我们（被动）（强约束）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this">
-<meta property="og:url" content="http://yoursite.com/2017/03/15/this/index.html">
+<meta property="og:title" content="angular">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/angular/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="1.this的第一种用法： 事件绑定函数中的this就是事件被触发的时候那个元素,其实也就是绑定给谁this就是谁
-var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
-   div1.onclick = function (){
-       console.log(this);//div1
-   }
-2.this的第二种用法: 函数中的th">
-<meta property="og:updated_time" content="2017-03-15T10:07:28.403Z">
+<meta property="og:description" content="框架和(库 vue react angular)
+库 提供了很多方法，让我们来调用（主动调用）
+框架 我们按照他的规范去写，人家调用我们（被动）（强约束）">
+<meta property="og:updated_time" content="2017-03-18T08:17:45.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this">
-<meta name="twitter:description" content="1.this的第一种用法： 事件绑定函数中的this就是事件被触发的时候那个元素,其实也就是绑定给谁this就是谁
-var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
-   div1.onclick = function (){
-       console.log(this);//div1
-   }
-2.this的第二种用法: 函数中的th">
+<meta name="twitter:title" content="angular">
+<meta name="twitter:description" content="框架和(库 vue react angular)
+库 提供了很多方法，让我们来调用（主动调用）
+框架 我们按照他的规范去写，人家调用我们（被动）（强约束）">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -174,62 +165,30 @@ var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-this" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-angular" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      this
+      angular
     </h1>
   
 
         
-        <a href="/2017/03/15/this/" class="archive-article-date">
-  	<time datetime="2017-03-15T09:46:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
+        <a href="/2017/03/18/angular/" class="archive-article-date">
+  	<time datetime="2017-03-18T08:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.this的第一种用法： 事件绑定函数中的this就是事件被触发的时候那个元素,其实也就是绑定给谁this就是谁</p>
-<pre><code>var div1 = document.getElementById(&apos;div1&apos;);
-   div1.onclick = function (){
-       console.log(this);//div1
-   }
-</code></pre><p>2.this的第二种用法: 函数中的this是谁，在定义的时候根本就不知道。在函数执行的时候，函数中的this(函数中)就是调用这个函数的行为主体,其实就是看函数前面的”.”，”.”前面是谁那么函数中的this就是谁。如果没有”.”那么this就是window</p>
-<pre><code>function fn(){
-       console.log(this);
-   }
-   //console.log(window.fn); // 定义在全局作用域内的函数也是window的一个属性
-
-   var obj = {
-       name : &apos;xxx&apos;,
-       fn : fn
-   };
-   obj.fn(); // this =&gt; obj
-   fn(); // this =&gt; wind
-</code></pre><p>3.this的第三种用法：自运行函数中的this永远是window</p>
-<pre><code>(function (){
-       console.log(this);
-   })();
-   var num = 10;
-   var obj = {
-       fn : (function (num){ // 这个自运行函数的作用域是不会被释放，因为返回值的匿名函数被obj.fn占用了
-           var num = 100; //这个100是不丢的。因为这个作用域没有被释放
-           console.log(this);
-           return function (){ // 这个函数就是自运行函数的运行结果，运行结束后是要赋值给obj.fn当作属性值的
-               console.log(111);
-           }
-       })(num)
-   };
-   console.log(obj.fn); //打印出来的是undefined =&gt; 说明在给对象赋值的过程中，如果属性值是一个自运行后函数，那么要等这个自运行函数的运行结果再赋值给属性 =&gt; 先运行后赋值
-</code></pre><p>4.构造函数中的this是当前实例</p>
-<p>5.call和apply都可以强制改变this</p>
-<p>6.定时器中的this都是window</p>
-<p>7.回调函数中的this一般也都是window</p>
+        <h2 id="框架和-库-vue-react-angular"><a href="#框架和-库-vue-react-angular" class="headerlink" title="框架和(库 vue react angular)"></a>框架和(库 vue react angular)</h2><ul>
+<li>库 提供了很多方法，让我们来调用（主动调用）</li>
+<li>框架 我们按照他的规范去写，人家调用我们（被动）（强约束）</li>
+</ul>
 
       
 
@@ -264,7 +223,7 @@ var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常见this问题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
         		</li>
       		
 		</ul>
@@ -320,7 +279,7 @@ var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/15/this/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/18/angular/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +293,9 @@ var div1 = document.getElementById(&amp;apos;div1&amp;apos;);
   
 <nav id="article-nav">
   
-    <a href="/2017/03/18/angular/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          angular
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/14/git/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git常用命令</div>
+    <a href="/2017/03/15/this/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">this</div>
       <i class="icon-circle-right"></i>
     </a>
   
