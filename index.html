@@ -213,19 +213,19 @@
 </ul>
 <h2 id="ng-model"><a href="#ng-model" class="headerlink" title="ng-model"></a>ng-model</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-model=&apos;name&apos;</div></pre></td></tr></table></figure>
 <ul>
-<li>实现双向数据绑定的，当前作用域下没有变量，在当前作用域下声明，如果有变量，将name的值绑定给input标签，（数据影响视图）如果input中内容改变，会改变当前作用域上的（视图影响数据）<h2 id="ng-cloak"><a href="#ng-cloak" class="headerlink" title="ng-cloak"></a>ng-cloak</h2></li>
+<li>实现双向数据绑定的，当前作用域下没有变量，在当前作用域下声明，如果有变量，将name的值绑定给input标签，（数据影响视图）如果input中内容改变，会改变当前作用域上的（视图影响数据）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[ng-cloak]&#123;</div><div class="line">    display:none</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="ng-cloak"><a href="#ng-cloak" class="headerlink" title="ng-cloak"></a>ng-cloak</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[ng-cloak]&#123;</div><div class="line">    display:none</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>在所有闪烁的标签上增加ng-cloak属性</li>
 </ul>
 <h2 id="ng-bind"><a href="#ng-bind" class="headerlink" title="ng-bind"></a>ng-bind</h2><ul>
-<li>不会导致页面的闪烁</li>
 <li>1.支持简单的运算</li>
 <li>2.支持三元运算符</li>
 <li>3.支持赋值操作</li>
+<li>4.不会导致页面的闪烁</li>
 </ul>
-
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;moduleName&apos;,[]);</div></pre></td></tr></table></figure>
       
 
       
